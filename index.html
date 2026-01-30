@@ -43,6 +43,26 @@ header p {
 }
 
 /* LIGHTBOX */
+<script>
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+
+// Abrir a imagem grande ao clicar na galeria
+document.querySelectorAll('.galeria a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();        // Impede o link de abrir sozinho
+    lightboxImg.src = link.href; // Coloca a foto clicada na lightbox
+    lightbox.style.display = 'flex'; // Mostra o lightbox
+  });
+});
+
+// Fechar lightbox ao clicar fora da imagem
+lightbox.addEventListener('click', e => {
+  if(e.target === lightbox) {   // Só fecha se clicares no fundo preto
+    lightbox.style.display = 'none';
+  }
+});
+</script>  
 .lightbox {
   position: fixed;
   top: 0;
