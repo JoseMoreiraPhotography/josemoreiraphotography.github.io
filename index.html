@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -38,10 +39,30 @@ header p {
 .galeria img {
   width: 100%;
   border-radius: 10px;
+  cursor: pointer;
+}
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.lightbox img {
+  max-width: 95%;
+  max-height: 95%;
 }
 </style>
-
 </head>
+
 <body>
 
 <header>
@@ -50,10 +71,18 @@ header p {
 </header>
 
 <div class="galeria">
-  <img src="fotos/foto1.jpg" >
-  <img src="fotos/foto2.png" >
-  <img src="fotos/foto3.jpg">
+  <a href="fotos/foto1.jpg">
+    <img src="fotos/foto1.jpg" alt="Paisagem 1">
+  </a>
+
+  <a href="fotos/foto2.png">
+    <img src="fotos/foto2.png" alt="Paisagem 2">
+  </a>
+
+  <a href="fotos/foto3.jpg">
+    <img src="fotos/foto3.jpg" alt="Paisagem 3">
+  </a>
 </div>
 
-</body>
-</html>
+<!-- LIGHTBOX -->
+<div class="lightbox" id="light
