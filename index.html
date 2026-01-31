@@ -1,10 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>José Moreira | Fotografia de Paisagem</title>
 
 <style>
+/* BASE */
 body {
   margin: 0;
   background: #0b0b0b;
@@ -12,47 +16,30 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* HEADER */
 header {
   text-align: center;
-  padding: 50px 20px 30px;
+  padding: 56px 20px 32px;
 }
 
 header h1 {
   font-weight: 300;
   letter-spacing: 2px;
-  margin-bottom: 10px;
+  margin: 0 0 8px;
 }
 
 header p {
+  margin: 0;
   color: #aaa;
   font-size: 14px;
 }
 
-.galeria {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 28px;
-  padding: 32px;
-}
-
-  .galeria a {
-  display: block;
-}
-
-.galeria img {
-  transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-.galeria a:hover img {
-  transform: scale(1.015);
-  opacity: 0.92;
-}
-
-.galeria img {
-  width: 100%;
-  border-radius: 6px;
-  cursor: pointer;
-}
+/* COLEÇÕES */
 .colecoes {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -64,39 +51,31 @@ header p {
   position: relative;
   overflow: hidden;
   border-radius: 6px;
+  background: #000;
 }
 
 .colecao img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   transition: transform 0.6s ease;
 }
 
 .colecao:hover img {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
-.print-info {
-  position: absolute;
-  bottom: 30px;
-  text-align: center;
-  font-size: 13px;
-  color: #ccc;
-}
-
-.print-info a {
-  display: inline-block;
-  margin-top: 6px;
-  color: #fff;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,0.4);
-}
-                                                  
+/* OVERLAY */
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.35);
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.65),
+    rgba(0,0,0,0.15),
+    rgba(0,0,0,0)
+  );
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -107,58 +86,35 @@ header p {
   margin: 0;
   font-weight: 300;
   letter-spacing: 1px;
+  font-size: 20px;
 }
 
 .overlay p {
-  margin: 4px 0 0;
+  margin: 6px 0 0;
   font-size: 13px;
   color: #ddd;
 }
 
-  <div class="print-info">
-  <p>Disponível como print fine art</p>
-  <a href="mailto:mr.josemoreira@gmail.com">Solicitar informação</a>
-</div>
-
-/* LIGHTBOX */
-.lightbox {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.9);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  opacity: 0;
-  transition: opacity 0.4s ease;
+/* INFO PRINT */
+.print-info {
+  text-align: center;
+  padding: 40px 20px 60px;
+  font-size: 13px;
+  color: #aaa;
 }
 
-.lightbox.active {
-  display: flex;
-  opacity: 1;
+.print-info a {
+  display: inline-block;
+  margin-top: 10px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #555;
+  transition: color 0.3s ease, border-color 0.3s ease;
 }
 
-.lightbox img {
-  max-width: 95%;
-  max-height: 95%;
-  transform: scale(0.97);
-  transition: transform 0.4s ease;
+.print-info a:hover {
+  color: #fff;
+  border-color: #fff;
 }
-
-.lightbox.active img {
-  transform: scale(1);
-}
-.lightbox {
-  cursor: zoom-out;
-}
-
-.lightbox img {
-  cursor: default;
-}
-  
 </style>
 </head>
 
@@ -166,10 +122,10 @@ header p {
 
 <header>
   <h1>José Moreira</h1>
-  <p>Fotografia de Paisagem</p>
+  <p>Fotografia de Paisagem · Fine Art Prints</p>
 </header>
 
-  <div class="colecoes">
+<main class="colecoes">
 
   <a class="colecao" href="colecao-portugal.html">
     <img src="capas/portugal.jpg" alt="Portugal">
@@ -195,14 +151,15 @@ header p {
     </div>
   </a>
 
-</div>
+</main>
 
+<footer class="print-info">
+  <p>Fotografias disponíveis como prints Fine Art em edição limitada</p>
+  <a href="mailto:mr.josemoreira@gmail.com">Solicitar informação</a>
+</footer>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
-  <img src="" alt="">
-</div>
-
+</body>
+</html>
 <script>
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = lightbox.querySelector('img');
