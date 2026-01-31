@@ -1,69 +1,96 @@
-
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>José Moreira | Fotografia de Paisagem</title>
-<link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<header>
-  <h1>José Moreira</h1>
-  <p>Fotografia de Paisagem · Fine Art Prints</p>
-</header>
-
-<main class="colecoes">
-
-  <a class="colecao" href="colecao-portugal.html">
-    <img src="capas/portugal.jpg" alt="Portugal">
-    <div class="overlay">
-      <h2>Portugal</h2>
-      <p>Luz atlântica, costa e intimidade</p>
-    </div>
-  </a>
-
-  <a class="colecao" href="colecao-nordic.html">
-    <img src="capas/nordic.jpg" alt="Nordic Landscapes">
-    <div class="overlay">
-      <h2>Nordic Landscapes</h2>
-      <p>Islândia + Noruega: Terra, gelo e tempo</p>
-    </div>
-  </a>
-
-  <a class="colecao" href="colecao-highlands.html">
-    <img src="capas/highlands.jpg" alt="Highlands & North">
-    <div class="overlay">
-      <h2>Highlands & North</h2>
-      <p>Escócia: Bruma e solidão</p>
-    </div>
-  </a>
-
-  <a class="colecao" href="colecao-central-europe.html">
-    <img src="capas/central-europe.jpg" alt="Central Europe">
-    <div class="overlay">
-      <h2>Central Europe</h2>
-      <p>Áustria + Polónia: Montanhas e história</p>
-    </div>
-  </a>
-
-  <a class="colecao" href="colecao-southern-light.html">
-    <img src="capas/southern-light.jpg" alt="Southern Light">
-    <div class="overlay">
-      <h2>Southern Light</h2>
-      <p>Itália: Luz e paisagens mediterrânicas</p>
-    </div>
-  </a>
-
-</main>
-
-<footer class="print-info">
-  <p>Fotografias disponíveis como prints Fine Art em edição limitada</p>
-  <a href="mailto:mr.josemoreira@gmail.com">Solicitar informação</a>
-</footer>
-
-</body>
+<!DOCTYPE html>  
+<html lang="pt">  
+<head>  
+<meta charset="UTF-8">  
+<title>José Moreira | Fotografia de Paisagem</title>  <style>  
+body {  
+  margin: 0;  
+  background: #0b0b0b;  
+  color: #ffffff;  
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;  
+}  
+  
+header {  
+  text-align: center;  
+  padding: 50px 20px 30px;  
+}  
+  
+header h1 {  
+  font-weight: 300;  
+  letter-spacing: 2px;  
+  margin-bottom: 10px;  
+}  
+  
+header p {  
+  color: #aaa;  
+  font-size: 14px;  
+}  
+  
+.galeria {  
+  display: grid;  
+  grid-template-columns: repeat(auto-fill, minmax(3000px, 1fr));  
+  gap: 28px;  
+  padding: 32px;  
+}  
+  
+.galeria img {  
+  width: 100%;  
+  border-radius: 10px;  
+  cursor: pointer;  
+}  
+  
+/* LIGHTBOX */  
+.lightbox {  
+  position: fixed;  
+  top: 0;  
+  left: 0;  
+  width: 100%;  
+  height: 100%;  
+  background: rgba(0,0,0,0.9);  
+  display: none;  
+  align-items: center;  
+  justify-content: center;  
+  z-index: 1000;  
+}  
+  
+.lightbox img {  
+  max-width: 95%;  
+  max-height: 95%;  
+}  
+</style>  </head>  <body>  <header>  
+  <h1>José Moreira</h1>  
+  <p>Fotografia de Paisagem</p>  
+</header>  <div class="galeria">  
+  <a href="fotos/foto1.jpg">  
+    <img src="fotos/foto1.jpg" alt="Paisagem 1">  
+  </a>    <a href="fotos/foto2.png">  
+    <img src="fotos/foto2.png" alt="Paisagem 2">  
+  </a>    <a href="fotos/foto3.jpg">  
+    <img src="fotos/foto3.jpg" alt="Paisagem 3">  
+  </a>    <a href="fotos/foto4.jpg">  
+    <img src="fotos/foto4.jpg" alt="Paisagem 4">  
+  </a>    <a href="fotos/foto5.jpg">  
+    <img src="fotos/foto5.jpg" alt="Paisagem 5">  
+  </a>  </div>  <!-- LIGHTBOX -->  <div class="lightbox" id="lightbox">  
+  <img src="" alt="">  
+</div>    <script>  
+const lightbox = document.getElementById('lightbox');  
+const lightboxImg = lightbox.querySelector('img');  
+  
+// Abrir a imagem grande ao clicar na galeria  
+document.querySelectorAll('.galeria a').forEach(link => {  
+  link.addEventListener('click', e => {  
+    e.preventDefault();        // Impede o link de abrir sozinho  
+    lightboxImg.src = link.href; // Coloca a foto clicada na lightbox  
+    lightbox.style.display = 'flex'; // Mostra o lightbox  
+  });  
+});  
+  
+// Fechar lightbox ao clicar fora da imagem  
+lightbox.addEventListener('click', e => {  
+  if(e.target === lightbox) {   // Só fecha se clicares no fundo preto  
+    lightbox.style.display = 'none';  
+  }  
+});  
+</script>  </body>  
 </html>
-
