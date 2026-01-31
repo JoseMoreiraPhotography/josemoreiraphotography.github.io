@@ -122,7 +122,8 @@ header p {
 </div>
 
   <script>
-document.getElementById('lightbox');
+
+const lightbox = document.getElementById('lightbox');
 const lightboxImg = lightbox.querySelector('img');
 
 document.querySelectorAll('.galeria a').forEach(link => {
@@ -138,6 +139,7 @@ lightbox.addEventListener('click', e => {
     lightbox.classList.remove('active');
   }
 });
+    
 </script>
 
 </body>
