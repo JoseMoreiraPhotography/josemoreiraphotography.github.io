@@ -1,128 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>José Moreira | Fine Art Photography</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<!DOCTYPE html>  <html lang="pt">  
-<head>  
-<meta charset="UTF-8">  
-<title>José Moreira | Fotografia de Paisagem</title>  <style>  
-body {  
-  margin: 0;  
-  background: #0b0b0b;  
-  color: #ffffff;  
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;  
-}  
-  
-header {  
-  text-align: center;  
-  padding: 50px 20px 30px;  
-}  
-  
-header h1 {  
-  font-weight: 300;  
-  letter-spacing: 2px;  
-  margin-bottom: 10px;  
-}  
-  
-header p {  
-  color: #aaa;  
-  font-size: 14px;  
-}  
-  
-.galeria {  
-  display: grid;  
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));  
-  gap: 28px;  
-  padding: 32px;  
-}  
-  
-  .galeria a {  
-  display: block;  
-}  
-  
-.galeria img {  
-  transition: transform 0.4s ease, opacity 0.4s ease;  
-}  
-  
-.galeria a:hover img {  
-  transform: scale(1.015);  
-  opacity: 0.92;  
-}  
-  
-.galeria img {  
-  width: 100%;  
-  border-radius: 6px;  
-  cursor: pointer;  
-}  
-  
-/* LIGHTBOX */  
-.lightbox {  
-  position: fixed;  
-  top: 0;  
-  left: 0;  
-  width: 100%;  
-  height: 100%;  
-  background: rgba(0,0,0,0.9);  
-  display: none;  
-  align-items: center;  
-  justify-content: center;  
-  z-index: 1000;  
-  opacity: 0;  
-  transition: opacity 0.4s ease;  
-}  
-  
-.lightbox.active {  
-  display: flex;  
-  opacity: 1;  
-}  
-  
-.lightbox img {  
-  max-width: 95%;  
-  max-height: 95%;  
-  transform: scale(0.97);  
-  transition: transform 0.4s ease;  
-}  
-  
-.lightbox.active img {  
-  transform: scale(1);  
-}  
-.lightbox {  
-  cursor: zoom-out;  
-}  
-  
-.lightbox img {  
-  cursor: default;  
-}  
+  <header>
+    <h1>José Moreira</h1>
+    <p class="subtitle">Fine Art Landscape Photography</p>
+    <p class="curatorial-text">
+      Uma exploração visual da quietude e da luz. Coleções limitadas focadas na narrativa natural da Europa.
+    </p>
+  </header>
+
+  <main class="collections-grid">
     
-</style>  </head>  <body>  <header>  
-  <h1>José Moreira</h1>  
-  <p>Fotografia de Paisagem</p>  
-</header>  <div class="galeria">  
-  <a href="fotos/foto1.jpg">  
-    <img src="fotos/foto1.jpg" alt="Paisagem 1">  
-  </a>    <a href="fotos/foto2.png">  
-    <img src="fotos/foto2.png" alt="Paisagem 2">  
-  </a>    <a href="fotos/foto3.jpg">  
-    <img src="fotos/foto3.jpg" alt="Paisagem 3">  
-  </a>    <a href="fotos/foto4.jpg">  
-    <img src="fotos/foto4.jpg" alt="Paisagem 4">  
-  </a>    <a href="fotos/foto5.jpg">  
-    <img src="fotos/foto5.jpg" alt="Paisagem 5">  
-  </a>  </div>  <!-- LIGHTBOX -->  <div class="lightbox" id="lightbox">  
-  <img src="" alt="">  
-</div>  <script>  
-const lightbox = document.getElementById('lightbox');  
-const lightboxImg = lightbox.querySelector('img');  
-  
-document.querySelectorAll('.galeria a').forEach(link => {  
-  link.addEventListener('click', e => {  
-    e.preventDefault();  
-    lightboxImg.src = link.href;  
-    lightbox.classList.add('active');  
-  });  
-});  
-  
-lightbox.addEventListener('click', e => {  
-  if (e.target === lightbox) {  
-    lightbox.classList.remove('active');  
-  }  
-});  
-</script>  </body>  
+    <a href="colecao-portugal.html" class="collection-card">
+      <img src="capas/capa-portugal.jpg" alt="Portugal Landscape">
+      <div class="collection-info">
+        <h2>Portugal</h2>
+        <span>Luz Atlântica & Origem</span>
+      </div>
+    </a>
+
+    <a href="colecao-nordic.html" class="collection-card">
+      <img src="capas/capa-nordic.jpg" alt="Nordic Landscape">
+      <div class="collection-info">
+        <h2>Nordic Landscapes</h2>
+        <span>Gelo, Pedra e Silêncio</span>
+      </div>
+    </a>
+
+    <a href="colecao-highlands.html" class="collection-card">
+      <img src="capas/capa-highlands.jpg" alt="Scotland Landscape">
+      <div class="collection-info">
+        <h2>Highlands & North</h2>
+        <span>Atmosfera e Mistério</span>
+      </div>
+    </a>
+
+    <a href="colecao-central.html" class="collection-card">
+      <img src="capas/capa-central.jpg" alt="Central Europe Landscape">
+      <div class="collection-info">
+        <h2>Central Europe</h2>
+        <span>Montanhas e História</span>
+      </div>
+    </a>
+
+    <a href="colecao-south.html" class="collection-card">
+      <img src="capas/capa-south.jpg" alt="Southern Landscape">
+      <div class="collection-info">
+        <h2>Southern Light</h2>
+        <span>Arquitetura e Textura</span>
+      </div>
+    </a>
+
+  </main>
+
+  <footer class="print-info">
+    <p>&copy; 2025 José Moreira. All rights reserved.</p>
+  </footer>
+
+</body>
 </html>
