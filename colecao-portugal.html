@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portugal | José Moreira</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a href="index.html" class="nav-back">← Voltar às Coleções</a>
+
+  <header>
+    <h1>Portugal</h1>
+    <p class="subtitle">Coleção Luz Atlântica</p>
+    <p class="curatorial-text">
+      Uma jornada íntima pela costa ocidental e ilhas. Onde o mar encontra a terra, 
+      capturando a dualidade entre a força do Atlântico e a serenidade da luz dourada.
+    </p>
+  </header>
+
+  <div class="galeria">
+    <a href="fotos/pt_01.jpg">
+      <img src="fotos/pt_01.jpg" alt="Costa Vicentina">
+    </a>
+    
+    <a href="fotos/pt_02.jpg">
+      <img src="fotos/pt_02.jpg" alt="Açores Lagoa">
+    </a>
+    
+    <a href="fotos/pt_03.jpg">
+      <img src="fotos/pt_03.jpg" alt="Douro Nevoeiro">
+    </a>
+    
+    </div>
+
+  <footer class="print-info">
+    <h3>Edições Fine Art</h3>
+    <p style="max-width: 600px; margin: 0 auto 30px auto; color: #999; line-height: 1.8;">
+      Todas as obras desta coleção estão disponíveis como impressões Fine Art de qualidade museológica. 
+      <br>Papel 100% algodão (Hahnemühle Photo Rag), tintas pigmentadas minerais, assinadas e numeradas.
+      <br>Edição limitada a 15 exemplares por tamanho.
+    </p>
+    <a href="mailto:mr.josemoreira@gmail.com?subject=Inquiry%20Fine%20Art%20Print%20-%20Portugal%20Collection" class="cta-button">
+      Solicitar Catálogo & Valores
+    </a>
+  </footer>
+
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('img');
+
+    document.querySelectorAll('.galeria a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        lightboxImg.src = link.href;
+        lightbox.classList.add('active');
+      });
+    });
+
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove('active');
+      }
+    });
+  </script>
+
+</body>
+</html>
