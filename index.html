@@ -4,118 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>José Moreira | Fotografia de Paisagem</title>
-
-<style>
-/* BASE */
-body {
-  margin: 0;
-  background: #0b0b0b;
-  color: #ffffff;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* HEADER */
-header {
-  text-align: center;
-  padding: 56px 20px 32px;
-}
-
-header h1 {
-  font-weight: 300;
-  letter-spacing: 2px;
-  margin: 0 0 8px;
-}
-
-header p {
-  margin: 0;
-  color: #aaa;
-  font-size: 14px;
-}
-
-/* COLEÇÕES */
-.colecoes {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 32px;
-  padding: 32px;
-}
-
-.colecao {
-  position: relative;
-  overflow: hidden;
-  border-radius: 6px;
-  background: #000;
-}
-
-.colecao img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.6s ease;
-}
-
-.colecao:hover img {
-  transform: scale(1.05);
-}
-
-/* OVERLAY */
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,0.65),
-    rgba(0,0,0,0.15),
-    rgba(0,0,0,0)
-  );
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 20px;
-}
-
-.overlay h2 {
-  margin: 0;
-  font-weight: 300;
-  letter-spacing: 1px;
-  font-size: 20px;
-}
-
-.overlay p {
-  margin: 6px 0 0;
-  font-size: 13px;
-  color: #ddd;
-}
-
-/* INFO PRINT */
-.print-info {
-  text-align: center;
-  padding: 40px 20px 60px;
-  font-size: 13px;
-  color: #aaa;
-}
-
-.print-info a {
-  display: inline-block;
-  margin-top: 10px;
-  padding-bottom: 2px;
-  border-bottom: 1px solid #555;
-  transition: color 0.3s ease, border-color 0.3s ease;
-}
-
-.print-info a:hover {
-  color: #fff;
-  border-color: #fff;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -131,7 +21,7 @@ header p {
     <img src="capas/portugal.jpg" alt="Portugal">
     <div class="overlay">
       <h2>Portugal</h2>
-      <p>Luz atlântica e silêncio</p>
+      <p>Luz atlântica, costa e intimidade</p>
     </div>
   </a>
 
@@ -139,7 +29,7 @@ header p {
     <img src="capas/nordic.jpg" alt="Nordic Landscapes">
     <div class="overlay">
       <h2>Nordic Landscapes</h2>
-      <p>Terra, gelo e tempo</p>
+      <p>Islândia + Noruega: Terra, gelo e tempo</p>
     </div>
   </a>
 
@@ -147,7 +37,23 @@ header p {
     <img src="capas/highlands.jpg" alt="Highlands & North">
     <div class="overlay">
       <h2>Highlands & North</h2>
-      <p>Bruma e solidão</p>
+      <p>Escócia: Bruma e solidão</p>
+    </div>
+  </a>
+
+  <a class="colecao" href="colecao-central-europe.html">
+    <img src="capas/central-europe.jpg" alt="Central Europe">
+    <div class="overlay">
+      <h2>Central Europe</h2>
+      <p>Áustria + Polónia: Montanhas e história</p>
+    </div>
+  </a>
+
+  <a class="colecao" href="colecao-southern-light.html">
+    <img src="capas/southern-light.jpg" alt="Southern Light">
+    <div class="overlay">
+      <h2>Southern Light</h2>
+      <p>Itália: Luz e paisagens mediterrânicas</p>
     </div>
   </a>
 
@@ -160,6 +66,4 @@ header p {
 
 </body>
 </html>
-
-
 
