@@ -1,5 +1,5 @@
-<!DOCTYPE html>  
-<html lang="pt">  
+
+<!DOCTYPE html>  <html lang="pt">  
 <head>  
 <meta charset="UTF-8">  
 <title>José Moreira | Fotografia de Paisagem</title>  <style>  
@@ -42,8 +42,8 @@ header p {
 }  
   
 .galeria a:hover img {  
-  transform: scale(1.02);  
-  opacity: 0.9;  
+  transform: scale(1.015);  
+  opacity: 0.92;  
 }  
   
 .galeria img {  
@@ -76,7 +76,21 @@ header p {
 .lightbox img {  
   max-width: 95%;  
   max-height: 95%;  
+  transform: scale(0.97);  
+  transition: transform 0.4s ease;  
 }  
+  
+.lightbox.active img {  
+  transform: scale(1);  
+}  
+.lightbox {  
+  cursor: zoom-out;  
+}  
+  
+.lightbox img {  
+  cursor: default;  
+}  
+    
 </style>  </head>  <body>  <header>  
   <h1>José Moreira</h1>  
   <p>Fotografia de Paisagem</p>  
