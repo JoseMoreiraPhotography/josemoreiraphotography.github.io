@@ -119,6 +119,7 @@ header p.curatorial-text {
 
 .galeria img {
   width: 100%;
+  height: auto;
   display: block;
   transition: opacity 0.4s ease;
   border-radius: 2px; /* Ligeiro, não muito redondo */
