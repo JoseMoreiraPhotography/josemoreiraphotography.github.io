@@ -160,24 +160,6 @@ header p {
 
 </body>
 </html>
-<script>
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = lightbox.querySelector('img');
 
-document.querySelectorAll('.galeria a').forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    lightboxImg.src = link.href;
-    lightbox.classList.add('active');
-  });
-});
 
-lightbox.addEventListener('click', e => {
-  if (e.target === lightbox) {
-    lightbox.classList.remove('active');
-  }
-});
-</script>
 
-</body>
-</html>
