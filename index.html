@@ -68,6 +68,16 @@ header p {
   z-index: 1000;
 }
 
+  .lightbox {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.lightbox.active {
+  display: flex;
+  opacity: 1;
+}
+
 .lightbox img {
   max-width: 95%;
   max-height: 95%;
@@ -112,22 +122,20 @@ header p {
 </div>
 
   <script>
-const lightbox = document.getElementById('lightbox');
+document.getElementById('lightbox');
 const lightboxImg = lightbox.querySelector('img');
 
-// Abrir a imagem grande ao clicar na galeria
 document.querySelectorAll('.galeria a').forEach(link => {
   link.addEventListener('click', e => {
-    e.preventDefault();        // Impede o link de abrir sozinho
-    lightboxImg.src = link.href; // Coloca a foto clicada na lightbox
-    lightbox.style.display = 'flex'; // Mostra o lightbox
+    e.preventDefault();
+    lightboxImg.src = link.href;
+    lightbox.classList.add('active');
   });
 });
 
-// Fechar lightbox ao clicar fora da imagem
 lightbox.addEventListener('click', e => {
-  if(e.target === lightbox) {   // Só fecha se clicares no fundo preto
-    lightbox.style.display = 'none';
+  if (e.target === lightbox) {
+    lightbox.classList.remove('active');
   }
 });
 </script>
