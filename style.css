@@ -10,6 +10,47 @@ body {
 a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
 a:hover { opacity: 0.7; }
 
+/* CURATORIAL DO AUTOR */
+.curatorial {
+  padding: 80px 20px 100px;
+  background: #0b0b0b;
+}
+
+.curatorial-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.curatorial p {
+  font-size: 16px;
+  line-height: 1.9;
+  font-weight: 300;
+  color: #bdbdbd;
+  margin: 0 0 28px 0;
+}
+
+.curatorial p:last-child {
+  margin-bottom: 0;
+}
+
+/* Leve respiro antes das coleções */
+.curatorial + .collections-grid,
+.curatorial + .colecoes {
+  margin-top: 40px;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .curatorial {
+    padding: 60px 20px 80px;
+  }
+
+  .curatorial p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+}
+
 /* HEADER */
 header {
   text-align: center;
