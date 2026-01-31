@@ -1,0 +1,174 @@
+/* style.css - Minimalist Dark Theme */
+body {
+  margin: 0;
+  background: #0b0b0b;
+  color: #e0e0e0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; transition: opacity 0.3s; }
+a:hover { opacity: 0.7; }
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 60px 20px 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+header h1 {
+  font-weight: 300;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+  font-size: 2rem;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+header p.subtitle {
+  color: #888;
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+header p.curatorial-text {
+  font-size: 15px;
+  color: #bbb;
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+/* NAVEGAÇÃO DE VOLTAR (Para as páginas de coleção) */
+.nav-back {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #666;
+  text-transform: uppercase;
+}
+
+/* GRID DE COLEÇÕES (Homepage) */
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 4px; /* Estilo editorial, quase colado */
+  padding: 0;
+}
+
+.collection-card {
+  position: relative;
+  aspect-ratio: 3/2; /* Formato clássico */
+  overflow: hidden;
+  group: block;
+}
+
+.collection-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  filter: brightness(0.8);
+}
+
+.collection-card:hover img {
+  transform: scale(1.03);
+  filter: brightness(0.6);
+}
+
+.collection-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+  width: 100%;
+}
+
+.collection-info h2 {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: #fff;
+  margin: 0 0 5px 0;
+}
+
+.collection-info span {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #ddd;
+  text-transform: uppercase;
+}
+
+/* GRID DE GALERIA (Páginas Internas) */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px; /* Mais ar entre as fotos */
+  padding: 40px 8%; /* Margens laterais maiores */
+}
+
+.galeria img {
+  width: 100%;
+  display: block;
+  transition: opacity 0.4s ease;
+  border-radius: 2px; /* Ligeiro, não muito redondo */
+}
+
+.galeria a:hover img {
+  opacity: 0.8;
+}
+
+/* FOOTER / PRINT INFO */
+footer.print-info {
+  text-align: center;
+  padding: 80px 20px;
+  border-top: 1px solid #222;
+  margin-top: 50px;
+  background: #080808;
+}
+
+footer.print-info p {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+footer.print-info .cta-button {
+  display: inline-block;
+  border: 1px solid #444;
+  padding: 12px 30px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+footer.print-info .cta-button:hover {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+/* LIGHTBOX */
+.lightbox {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.95);
+  display: none;
+  align-items: center; justify-content: center;
+  z-index: 1000;
+  opacity: 0; transition: opacity 0.3s ease;
+}
+.lightbox.active { display: flex; opacity: 1; }
+.lightbox img {
+  max-width: 90vw; max-height: 90vh;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
